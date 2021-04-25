@@ -12,6 +12,9 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		9A36E18E26358EA3009CC4BE /* CounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A36E18D26358EA3009CC4BE /* CounterView.swift */; };
+		9A36E192263591A5009CC4BE /* CounterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A36E191263591A5009CC4BE /* CounterManager.swift */; };
+		9A36E19626359401009CC4BE /* CounterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A36E19526359401009CC4BE /* CounterManager.m */; };
 		C7A98A7B6CBAB4EB43682EE8 /* libPods-NativeCounter-NativeCounterTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B165E96ADF0B7352F9BFD970 /* libPods-NativeCounter-NativeCounterTests.a */; };
 		F55E73F78BA6EFD9CCD7E285 /* libPods-NativeCounter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D6794633B1A101F6E16F7B70 /* libPods-NativeCounter.a */; };
 /* End PBXBuildFile section */
@@ -40,6 +43,10 @@
 		2044D7F8AECC86718F1687BA /* Pods-NativeCounter-NativeCounterTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NativeCounter-NativeCounterTests.release.xcconfig"; path = "Target Support Files/Pods-NativeCounter-NativeCounterTests/Pods-NativeCounter-NativeCounterTests.release.xcconfig"; sourceTree = "<group>"; };
 		51AE454A69F4503FB5A6E035 /* Pods-NativeCounter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NativeCounter.release.xcconfig"; path = "Target Support Files/Pods-NativeCounter/Pods-NativeCounter.release.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = NativeCounter/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9A36E15B2634AA13009CC4BE /* NativeCounter-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NativeCounter-Bridging-Header.h"; sourceTree = "<group>"; };
+		9A36E18D26358EA3009CC4BE /* CounterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CounterView.swift; path = NativeCounter/CounterView.swift; sourceTree = "<group>"; };
+		9A36E191263591A5009CC4BE /* CounterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CounterManager.swift; path = NativeCounter/CounterManager.swift; sourceTree = "<group>"; };
+		9A36E19526359401009CC4BE /* CounterManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CounterManager.m; path = NativeCounter/CounterManager.m; sourceTree = "<group>"; };
 		B165E96ADF0B7352F9BFD970 /* libPods-NativeCounter-NativeCounterTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NativeCounter-NativeCounterTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC64DF71E3EDF7AC0669C448 /* Pods-NativeCounter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NativeCounter.debug.xcconfig"; path = "Target Support Files/Pods-NativeCounter/Pods-NativeCounter.debug.xcconfig"; sourceTree = "<group>"; };
 		D6794633B1A101F6E16F7B70 /* libPods-NativeCounter.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NativeCounter.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -92,6 +99,10 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
+				9A36E15B2634AA13009CC4BE /* NativeCounter-Bridging-Header.h */,
+				9A36E18D26358EA3009CC4BE /* CounterView.swift */,
+				9A36E191263591A5009CC4BE /* CounterManager.swift */,
+				9A36E19526359401009CC4BE /* CounterManager.m */,
 			);
 			name = NativeCounter;
 			sourceTree = "<group>";
@@ -145,7 +156,6 @@
 				046C05A3BBF40E77E6912E4E /* Pods-NativeCounter-NativeCounterTests.debug.xcconfig */,
 				2044D7F8AECC86718F1687BA /* Pods-NativeCounter-NativeCounterTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -208,7 +218,7 @@
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
-						LastSwiftMigration = 1120;
+						LastSwiftMigration = 1240;
 					};
 				};
 			};
@@ -412,7 +422,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
+				9A36E19626359401009CC4BE /* CounterManager.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
+				9A36E192263591A5009CC4BE /* CounterManager.swift in Sources */,
+				9A36E18E26358EA3009CC4BE /* CounterView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -431,6 +444,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 046C05A3BBF40E77E6912E4E /* Pods-NativeCounter-NativeCounterTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -458,6 +472,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2044D7F8AECC86718F1687BA /* Pods-NativeCounter-NativeCounterTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				INFOPLIST_FILE = NativeCounterTests/Info.plist;
@@ -498,6 +513,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = NativeCounter;
+				SWIFT_OBJC_BRIDGING_HEADER = "NativeCounter-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -523,6 +539,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = NativeCounter;
+				SWIFT_OBJC_BRIDGING_HEADER = "NativeCounter-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};

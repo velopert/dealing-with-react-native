@@ -33,7 +33,7 @@ class CounterManager: SimpleViewManager<CounterView>() {
 
     override fun getExportedCustomBubblingEventTypeConstants(): MutableMap<String, Any> {
         val builder = MapBuilder.builder<String, Any>()
-        
+
         return builder
                 .put("pressLeftButton", MapBuilder.of(
                         "phasedRegistrationNames",
