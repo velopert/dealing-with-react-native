@@ -1,7 +1,6 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
-import {Text, Button, View} from 'react-native';
-
+import {Text, View, Button} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 const Tab = createMaterialTopTabNavigator();
@@ -12,7 +11,11 @@ function HomeScreen({navigation}) {
       <Text>Home</Text>
       <Button
         title="Detail 1 열기"
-        onPress={() => navigation.push('Detail', {id: 1})}
+        onPress={() =>
+          navigation.push('Detail', {
+            id: 1,
+          })
+        }
       />
     </View>
   );
@@ -42,35 +45,15 @@ function MessageScreen() {
   );
 }
 
-function getHeaderTitle(route) {
-  // 현재 화면의 name을 조회합니다
-  const routeName = route.state
-    ? route.state.routes[route.state.index].name
-    : 'Home';
-
-  // 각 화면을 위한 타이틀
-  const titleMap = {
-    Home: '홈',
-    Search: '검색',
-    Notification: '알림',
-    Message: '메시지',
-  };
-
-  // name 을 key로 사용하여 원하는 타이틀을 선택합니다.
-  return titleMap[routeName];
-}
-
-function MainScreen({navigation, route}) {
-  useEffect(() => {
-    navigation.setOptions({headerTitle: getHeaderTitle(route)});
-  }, [navigation, route]);
-
+function MainScreen() {
   return (
     <Tab.Navigator
       initialRouteName="Home"
-      tabBarPosition="bottom"
-      tabBarOptions={{
-        showIcon: true,
+      screenOptions={{
+        tabBarIndicatorStyle: {
+          backgroundColor: '#009688',
+        },
+        tabBarActiveTintColor: '#009688',
       }}>
       <Tab.Screen
         name="Home"
@@ -84,7 +67,7 @@ function MainScreen({navigation, route}) {
         name="Search"
         component={SearchScreen}
         options={{
-          tabBarLabel: '설정',
+          tabBarLabel: '검색',
           tabBarIcon: ({color}) => (
             <Icon name="search" color={color} size={24} />
           ),

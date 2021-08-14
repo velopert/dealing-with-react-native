@@ -7,6 +7,7 @@ function DetailScreen({route, navigation}) {
       title: `상세 정보 - ${route.params.id}`,
     });
   }, [navigation, route.params.id]);
+
   return (
     <View style={styles.block}>
       <Text style={styles.text}>id: {route.params.id}</Text>
