@@ -19,7 +19,8 @@ export type MainTabNavigationProp = CompositeNavigationProp<
   RootStackNavigationProp,
   BottomTabNavigationProp<MainTabParamList>
 >;
-export type MainTabNavigationScreenParams = NavigatorScreenParams<MainTabParamList>;
+export type MainTabNavigationScreenParams =
+  NavigatorScreenParams<MainTabParamList>;
 
 const Tab = createBottomTabNavigator<MainTabParamList>();
 

@@ -1,9 +1,9 @@
 import React from 'react';
-import {Button, Text, View} from 'react-native';
+import {Text, View} from 'react-native';
 import {
-  createStackNavigator,
-  StackNavigationProp,
-} from '@react-navigation/stack';
+  createNativeStackNavigator,
+  NativeStackNavigationProp,
+} from '@react-navigation/native-stack';
 import {RouteProp, useRoute} from '@react-navigation/native';
 import MainTab, {MainTabNavigationScreenParams} from './MainTab';
 
@@ -13,10 +13,10 @@ type RootStackParamList = {
     id: number;
   };
 };
+export type RootStackNavigationProp =
+  NativeStackNavigationProp<RootStackParamList>;
 
-export type RootStackNavigationProp = StackNavigationProp<RootStackParamList>;
-
-const Stack = createStackNavigator<RootStackParamList>();
+const Stack = createNativeStackNavigator<RootStackParamList>();
 
 type DetailScreenRouteProp = RouteProp<RootStackParamList, 'Detail'>;
 function DetailScreen() {
@@ -31,7 +31,13 @@ function DetailScreen() {
 function RootStack() {
   return (
     <Stack.Navigator>
-      <Stack.Screen component={MainTab} name="MainTab" />
+      <Stack.Screen
+        component={MainTab}
+        name="MainTab"
+        options={{
+          headerShown: false,
+        }}
+      />
       <Stack.Screen component={DetailScreen} name="Detail" />
     </Stack.Navigator>
   );
